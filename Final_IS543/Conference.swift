@@ -19,7 +19,7 @@ class Conference {
     
     init(fromRow: Row) {
         id = fromRow.get(confID)
-        description = fromRow.get(confDescription) ?? ""
+        description = fromRow.get(confDescription) ?? ""    // Empty by default
         abbreviation = fromRow.get(confAbbreviation) ?? ""
         year = fromRow.get(confYear)
         annual = fromRow.get(confAnnual) ?? ""

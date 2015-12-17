@@ -8,14 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		27D481D41C2330D4008E5E1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D481D31C2330D4008E5E1D /* AppDelegate.swift */; };
-		27D481D61C2330D4008E5E1D /* TalkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D481D51C2330D4008E5E1D /* TalkTableViewController.swift */; };
+		27D481D61C2330D4008E5E1D /* ConferenceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D481D51C2330D4008E5E1D /* ConferenceTableViewController.swift */; };
 		27D481D91C2330D4008E5E1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27D481D71C2330D4008E5E1D /* Main.storyboard */; };
 		27D481DB1C2330D4008E5E1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D481DA1C2330D4008E5E1D /* Assets.xcassets */; };
 		27D481DE1C2330D4008E5E1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27D481DC1C2330D4008E5E1D /* LaunchScreen.storyboard */; };
 		27D481E91C233192008E5E1D /* core.23.db in Resources */ = {isa = PBXBuildFile; fileRef = 27D481E81C233192008E5E1D /* core.23.db */; };
 		27D481EF1C23367F008E5E1D /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D481EE1C23367F008E5E1D /* DB.swift */; };
-		27D481F11C233845008E5E1D /* Talk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D481F01C233845008E5E1D /* Talk.swift */; };
+		27D481F11C233845008E5E1D /* ConfTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D481F01C233845008E5E1D /* ConfTalk.swift */; };
 		27D481F31C233A80008E5E1D /* Conference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D481F21C233A80008E5E1D /* Conference.swift */; };
+		27D481F51C233E9E008E5E1D /* TalkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D481F41C233E9E008E5E1D /* TalkTableViewController.swift */; };
+		27D481F71C2340D8008E5E1D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D481F61C2340D8008E5E1D /* Session.swift */; };
 		96AD0068B34B3FE8D567500C /* Pods_Final_IS543.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093CF87F3C93B2CB59153E42 /* Pods_Final_IS543.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,15 +25,17 @@
 		093CF87F3C93B2CB59153E42 /* Pods_Final_IS543.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_IS543.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D481D01C2330D4008E5E1D /* Final_IS543.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Final_IS543.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D481D31C2330D4008E5E1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		27D481D51C2330D4008E5E1D /* TalkTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkTableViewController.swift; sourceTree = "<group>"; };
+		27D481D51C2330D4008E5E1D /* ConferenceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceTableViewController.swift; sourceTree = "<group>"; };
 		27D481D81C2330D4008E5E1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27D481DA1C2330D4008E5E1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27D481DD1C2330D4008E5E1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27D481DF1C2330D4008E5E1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27D481E81C233192008E5E1D /* core.23.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = core.23.db; sourceTree = "<group>"; };
 		27D481EE1C23367F008E5E1D /* DB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
-		27D481F01C233845008E5E1D /* Talk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Talk.swift; sourceTree = "<group>"; };
+		27D481F01C233845008E5E1D /* ConfTalk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfTalk.swift; sourceTree = "<group>"; };
 		27D481F21C233A80008E5E1D /* Conference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conference.swift; sourceTree = "<group>"; };
+		27D481F41C233E9E008E5E1D /* TalkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkTableViewController.swift; sourceTree = "<group>"; };
+		27D481F61C2340D8008E5E1D /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		520A2DDE3CBFA08E61BF8DDE /* Pods-Final_IS543.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_IS543.release.xcconfig"; path = "Pods/Target Support Files/Pods-Final_IS543/Pods-Final_IS543.release.xcconfig"; sourceTree = "<group>"; };
 		EB1A151E4C86944C6A6E1142 /* Pods-Final_IS543.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_IS543.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final_IS543/Pods-Final_IS543.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,7 +96,8 @@
 				27D481DA1C2330D4008E5E1D /* Assets.xcassets */,
 				27D481DF1C2330D4008E5E1D /* Info.plist */,
 				27D481EE1C23367F008E5E1D /* DB.swift */,
-				27D481F01C233845008E5E1D /* Talk.swift */,
+				27D481F61C2340D8008E5E1D /* Session.swift */,
+				27D481F01C233845008E5E1D /* ConfTalk.swift */,
 				27D481F21C233A80008E5E1D /* Conference.swift */,
 			);
 			name = Model;
@@ -111,7 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				27D481D31C2330D4008E5E1D /* AppDelegate.swift */,
-				27D481D51C2330D4008E5E1D /* TalkTableViewController.swift */,
+				27D481D51C2330D4008E5E1D /* ConferenceTableViewController.swift */,
+				27D481F41C233E9E008E5E1D /* TalkTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -247,11 +253,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27D481D61C2330D4008E5E1D /* TalkTableViewController.swift in Sources */,
-				27D481F11C233845008E5E1D /* Talk.swift in Sources */,
+				27D481F71C2340D8008E5E1D /* Session.swift in Sources */,
+				27D481D61C2330D4008E5E1D /* ConferenceTableViewController.swift in Sources */,
+				27D481F11C233845008E5E1D /* ConfTalk.swift in Sources */,
 				27D481F31C233A80008E5E1D /* Conference.swift in Sources */,
 				27D481D41C2330D4008E5E1D /* AppDelegate.swift in Sources */,
 				27D481EF1C23367F008E5E1D /* DB.swift in Sources */,
+				27D481F51C233E9E008E5E1D /* TalkTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

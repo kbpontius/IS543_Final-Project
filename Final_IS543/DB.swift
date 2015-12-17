@@ -10,12 +10,12 @@ import Foundation
 import SQLite
 
 // Talk Table Columns
-let talkTable = Table("conference_talk")
-let talkID = Expression<Int>("TalkID")
-let talkSessionID = Expression<Int>("SessionID")
-let talkStartPageNum = Expression<Int>("StartPageNum")
-let talkEndPageNum = Expression<Int>("EndPageNum")
-let talkSequence = Expression<Int>("Sequence")
+let confTalkTable = Table("conference_talk")
+let confTalkID = Expression<Int>("TalkID")
+let confTalkSessionID = Expression<Int>("SessionID")
+let confTalkStartPageNum = Expression<Int>("StartPageNum")
+let confTalkEndPageNum = Expression<Int>("EndPageNum")
+let confTalkSequence = Expression<Int>("Sequence")
 
 // Conference Table Columns
 let confTable = Table("conference")
@@ -25,6 +25,26 @@ let confAbbreviation = Expression<String?>("Abbr")
 let confYear = Expression<Int>("Year")
 let confAnnual = Expression<String?>("Annual")
 let confIssueDate = Expression<String?>("IssueDate")
+
+// Session Table Columns
+let sessionTable = Table("conf_session")
+let sessionID = Expression<Int>("ID")
+let sessionDescription = Expression<String?>("Description")
+let sessionAbbreviation = Expression<String?>("Abbr")
+let sessionDate = Expression<String?>("Date")
+let sessionSequence = Expression<Int>("Sequence")
+let sessionConfID = Expression<Int>("ConferenceID")
+
+// Talk Table Columns
+let talkTable = Table("talk")
+let talkID = Expression<Int>("ID")
+let talkCorpus = Expression<String?>("Corpus")
+let talkURL = Expression<String?>("URL")
+let talkTitle = Expression<String?>("Title")
+let talkDate = Expression<String?>("TalkDate")
+let talkSpeakerID = Expression<Int>("SpeakerID")
+let talkListenURL = Expression<String?>("ListenURL")
+let talkWatchURL = Expression<String?>("WatchURL")
 
 class DB {
     // Singleton
@@ -58,13 +78,9 @@ class DB {
     // MARK: - TALK METHODS
     
     // Get all talks in DB
-    func talksForConference(conferenceID: Int) -> [Talk] {
-        var talks = [Talk]()
+    func talksForConference(conferenceID: Int) {
+        let result = talkTable.join(confTalkTable.join(sessionTable, on: confTalkSessionID == sessionID), on: sessionConfID == conferenceID)
         
-        for talk in connection.prepare(talkTable) {
-            talks.append(Talk(fromRow: talk))
-        }
-        
-        return talks
+        print(result)
     }
 }

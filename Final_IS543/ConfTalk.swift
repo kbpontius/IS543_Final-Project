@@ -17,10 +17,10 @@ class Talk {
     let sequence: Int
     
     init(fromRow: Row) {
-        id = fromRow.get(talkID)
-        session = fromRow.get(talkSessionID)
-        startPage = fromRow.get(talkStartPageNum)
-        endPage = fromRow.get(talkEndPageNum)
-        sequence = fromRow.get(talkSequence)
+        id = fromRow.get(confTalkID)
+        session = fromRow.get(confTalkSessionID)
+        startPage = fromRow.get(confTalkStartPageNum)
+        endPage = fromRow.get(confTalkEndPageNum)
+        sequence = fromRow.get(confTalkSequence)
     }
 }
