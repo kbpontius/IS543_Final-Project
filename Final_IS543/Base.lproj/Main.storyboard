@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Conference Table View Controller-->
@@ -37,22 +38,25 @@
             </objects>
             <point key="canvasLocation" x="1115" y="376"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Talk Table View Controller-->
         <scene sceneID="pjt-Lw-uzJ">
             <objects>
-                <tableViewController id="CWk-VG-BOq" sceneMemberID="viewController">
+                <tableViewController id="CWk-VG-BOq" customClass="TalkTableViewController" customModule="Final_IS543" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="uJw-WG-ovx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zsV-cm-yBk">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="zsV-cm-yBk">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zsV-cm-yBk" id="D68-dg-c2v">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="LVd-39-nkf" kind="show" identifier="SegueShowVideo" id="g4A-8L-M7u"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -64,6 +68,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vVv-9S-cGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1845" y="376"/>
+        </scene>
+        <!--Video View Controller-->
+        <scene sceneID="dy1-77-mC8">
+            <objects>
+                <viewController id="LVd-39-nkf" customClass="VideoViewController" customModule="Final_IS543" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1ZU-Hs-Xcn"/>
+                        <viewControllerLayoutGuide type="bottom" id="dyL-HI-XoT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RFR-w3-OID">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V4A-TT-X2d">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="V4A-TT-X2d" secondAttribute="trailing" constant="-20" id="6mp-Dw-ABZ"/>
+                            <constraint firstItem="V4A-TT-X2d" firstAttribute="top" secondItem="1ZU-Hs-Xcn" secondAttribute="bottom" constant="-64" id="LMz-wy-Q3c"/>
+                            <constraint firstItem="dyL-HI-XoT" firstAttribute="top" secondItem="V4A-TT-X2d" secondAttribute="bottom" id="kdS-G2-BKH"/>
+                            <constraint firstItem="V4A-TT-X2d" firstAttribute="leading" secondItem="RFR-w3-OID" secondAttribute="leadingMargin" constant="-20" id="rp0-lX-Mz5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="V4A-TT-X2d" id="dAx-7Y-7Va"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZr-8y-86H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2517" y="376"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Ha-gq-b4Y">

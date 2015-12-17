@@ -41,7 +41,7 @@ let talkID = Expression<Int>("ID")
 let talkCorpus = Expression<String?>("Corpus")
 let talkURL = Expression<String?>("URL")
 let talkTitle = Expression<String?>("Title")
-let talkDate = Expression<String?>("TalkDate")
+let talkDate = Expression<String?>("Date")
 let talkSpeakerID = Expression<Int>("SpeakerID")
 let talkListenURL = Expression<String?>("ListenURL")
 let talkWatchURL = Expression<String?>("WatchURL")
@@ -77,10 +77,59 @@ class DB {
     
     // MARK: - TALK METHODS
     
-    // Get all talks in DB
-    func talksForConference(conferenceID: Int) {
-        let result = talkTable.join(confTalkTable.join(sessionTable, on: confTalkSessionID == sessionID), on: sessionConfID == conferenceID)
+    /**
+        PLEASE NOTE: I recognize this is far from a good way to 
+        do these DB calls, but after struggling with joins for 45 mins and
+        other problems, I decided just to aggregate the data myself as a quick-n-dirty
+        way to keep going. Sorry for the mess :)
+    */
+    func talksForConference(conferenceID: Int) -> [Talk] {
+        var talks = [Talk]()
+        var sessionIds = [Int]()
+        var conferenceTalkIds = [Int]()
         
-        print(result)
+        let sessionIdentifiers = connection.prepare(sessionTable.filter(sessionConfID == conferenceID))
+        
+        for id in sessionIdentifiers {
+            sessionIds.append(id.get(sessionID))
+        }
+        
+        for sessionIdentifier in sessionIds {
+            for id in connection.prepare(confTalkTable.filter(confTalkSessionID == sessionIdentifier)) {
+                conferenceTalkIds.append(id.get(confTalkID))
+            }
+        }
+
+        for conferenceTalkId in conferenceTalkIds {
+            let talkRecord = connection.pluck(talkTable.filter(talkID == conferenceTalkId))
+            let talk = Talk(fromRow: talkRecord!)
+            talks.append(talk)
+        }
+        
+        return talks
+    }
+    
+    func talkNamesForConferenceId(conferenceId: Int) -> [String] {
+        var talkNames = [String]()
+        let talks = talksForConference(conferenceId)
+        
+        for talk in talks {
+            talkNames.append(talk.title)
+        }
+        
+        return talkNames
+    }
+    
+    // Normally I'd use a query here and go off of talk ID...but there's 15 minutes left
+    func talkWatchURL(conferenceId: Int, talkName: String) -> String {
+        let talks = talksForConference(conferenceId)
+        
+        for talk in talks {
+            if talk.title == talkName {
+                return talk.watchURL
+            }
+        }
+        
+        return ""
     }
 }

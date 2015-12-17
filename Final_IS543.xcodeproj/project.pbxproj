@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27082FD21C23517000E8D8CF /* Talk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27082FD11C23517000E8D8CF /* Talk.swift */; };
+		27082FD41C23555300E8D8CF /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27082FD31C23555300E8D8CF /* VideoViewController.swift */; };
 		27D481D41C2330D4008E5E1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D481D31C2330D4008E5E1D /* AppDelegate.swift */; };
 		27D481D61C2330D4008E5E1D /* ConferenceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D481D51C2330D4008E5E1D /* ConferenceTableViewController.swift */; };
 		27D481D91C2330D4008E5E1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27D481D71C2330D4008E5E1D /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		093CF87F3C93B2CB59153E42 /* Pods_Final_IS543.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_IS543.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27082FD11C23517000E8D8CF /* Talk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Talk.swift; sourceTree = "<group>"; };
+		27082FD31C23555300E8D8CF /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		27D481D01C2330D4008E5E1D /* Final_IS543.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Final_IS543.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D481D31C2330D4008E5E1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27D481D51C2330D4008E5E1D /* ConferenceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceTableViewController.swift; sourceTree = "<group>"; };
@@ -96,9 +100,10 @@
 				27D481DA1C2330D4008E5E1D /* Assets.xcassets */,
 				27D481DF1C2330D4008E5E1D /* Info.plist */,
 				27D481EE1C23367F008E5E1D /* DB.swift */,
-				27D481F61C2340D8008E5E1D /* Session.swift */,
-				27D481F01C233845008E5E1D /* ConfTalk.swift */,
 				27D481F21C233A80008E5E1D /* Conference.swift */,
+				27D481F01C233845008E5E1D /* ConfTalk.swift */,
+				27D481F61C2340D8008E5E1D /* Session.swift */,
+				27082FD11C23517000E8D8CF /* Talk.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 				27D481D31C2330D4008E5E1D /* AppDelegate.swift */,
 				27D481D51C2330D4008E5E1D /* ConferenceTableViewController.swift */,
 				27D481F41C233E9E008E5E1D /* TalkTableViewController.swift */,
+				27082FD31C23555300E8D8CF /* VideoViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -254,6 +260,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				27D481F71C2340D8008E5E1D /* Session.swift in Sources */,
+				27082FD21C23517000E8D8CF /* Talk.swift in Sources */,
+				27082FD41C23555300E8D8CF /* VideoViewController.swift in Sources */,
 				27D481D61C2330D4008E5E1D /* ConferenceTableViewController.swift in Sources */,
 				27D481F11C233845008E5E1D /* ConfTalk.swift in Sources */,
 				27D481F31C233A80008E5E1D /* Conference.swift in Sources */,

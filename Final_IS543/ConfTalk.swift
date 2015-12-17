@@ -9,7 +9,7 @@
 import Foundation
 import SQLite
 
-class Talk {
+class ConfTalk {
     let id: Int
     let session: Int
     let startPage: Int

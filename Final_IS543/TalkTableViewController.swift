@@ -10,13 +10,17 @@ import UIKit
 
 class TalkTableViewController: UITableViewController {
     let db = DB.sharedInstance
-    var conferenceID:Int?
+    var conferenceID: Int!
+    var talkNames: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        
-        db.talksForConference(147)
+        talkNames = db.talkNamesForConferenceId(conferenceID!)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     // MARK: - SETUP METHODS
@@ -26,16 +30,26 @@ class TalkTableViewController: UITableViewController {
         tableView.dataSource = self
     }
     
+    // MARK: - NAVIGATION METHODS
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SegueShowVideo" {
+            let watchURL = db.talkWatchURL(conferenceID!, talkName: talkNames[tableView.indexPathForSelectedRow!.row])
+            let destVC = segue.destinationViewController as! VideoViewController
+            destVC.watchURL = watchURL
+        }
+    }
+    
     // MARK: - TABLEVIEW DELEGATE METHODS
     
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-//        cell.textLabel?.text = db.talksForConference(3)
-//        
-//        return cell
-//    }
-//    
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return db.talksForConference(3).count
-//    }
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        cell.textLabel?.text = talkNames[indexPath.row]
+    
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return talkNames.count
+    }
 }
