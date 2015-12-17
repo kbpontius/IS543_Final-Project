@@ -7,19 +7,31 @@
 //
 
 import UIKit
+import SQLite
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        testDB()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func testDB() {
+        let connection = DB.sharedInstance.connection
+        
+        let bookTable = Table("book")
+        let books = connection.prepare(bookTable)
+        
+        let id = Expression<Int64>("ID")
+        let fullName = Expression<String?>("FullName")
+        let gridName = Expression<String?>("GridName")
+        let citationCount = Expression<Int64>("CitationCount")
+        
+        for book in books {
+            print("id: \(book[id]), Full Name: \(book[fullName]), Grid Name: \(book[gridName]), Citation Count: \(book[citationCount])")
+        }
+        
+        print("Finished.")
     }
-
-
 }
 
